@@ -1,6 +1,7 @@
 extends CanvasLayer
 
-# The HUD in the JumpNRun Section.
+# The HUD in the JumpNRun section and on the Map.
+
 func changeHUD():
 	$TXT_Stars.text=str(PlayerData.actual_stars)
 	$TXT_Lifes.text=str(PlayerData.actual_lifes)
