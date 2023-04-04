@@ -1,0 +1,91 @@
+[gd_scene load_steps=11 format=3 uid="uid://ditaftt42mtpe"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/JumpNRunController.gd" id="1_7j1hd"]
+[ext_resource type="PackedScene" uid="uid://c7or6tpagd7op" path="res://Assets/Scenes/HUD.tscn" id="2_vogh3"]
+[ext_resource type="TileSet" uid="uid://dyqmali0y1kpl" path="res://Assets/Images/Tileset_Platform.tres" id="3_nl8jq"]
+[ext_resource type="Script" path="res://Assets/Scripts/PlatformerCamera.gd" id="4_siw7w"]
+[ext_resource type="Shader" path="res://Assets/Shaders/background_clouds.gdshader" id="5_rkfhj"]
+[ext_resource type="PackedScene" uid="uid://cvyw12xj7dlor" path="res://Assets/Entities/Player/Player.tscn" id="6_ujgfy"]
+[ext_resource type="PackedScene" uid="uid://cx8465pk5644t" path="res://Assets/Entities/SpawnPoint/spawn_point.tscn" id="7_fkl78"]
+[ext_resource type="PackedScene" uid="uid://ddhga3ua0qybp" path="res://Assets/Entities/CoinCollectible/Coin.tscn" id="8_2w5na"]
+[ext_resource type="PackedScene" uid="uid://b8isw2tr10on" path="res://Assets/Entities/StarCollectible/star.tscn" id="9_wisu2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_osj6q"]
+shader = ExtResource("5_rkfhj")
+shader_parameter/BackColor = Vector4(0.25, 0, 0, 0)
+shader_parameter/CloudColor = Quaternion(0.18, 0.7, 0.87, 1)
+shader_parameter/speed = -0.539
+
+[node name="Root" type="Node2D"]
+script = ExtResource("1_7j1hd")
+
+[node name="HUD" parent="." instance=ExtResource("2_vogh3")]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("3_nl8jq")
+format = 2
+layer_0/name = "OverlappingForeground"
+layer_0/z_index = 15
+layer_1/name = "Foreground"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 10
+layer_1/tile_data = PackedInt32Array(65532, 0, 6, 131068, 0, 7, 65533, 131072, 7, 131069, 131072, 6, -65540, 0, 6, -4, 0, 7, -65539, 131072, 7, -3, 131072, 6, -196612, 0, 6, -131076, 0, 7, -196611, 131072, 6, -131075, 131072, 6, -327684, 0, 6, -262148, 0, 7, -327683, 131072, 6, -262147, 131072, 6, 196604, 0, 6, 196605, 131072, 7, 196606, 131072, 0, 196607, 131072, 0, 131072, 131072, 0, 131073, 131072, 0, 131074, 131072, 0, 131075, 131072, 0, 131076, 131072, 0, 131077, 131072, 0, 262140, 0, 7, 327676, 0, 6, 262141, 131072, 7, 327677, 196608, 7, 262142, 131072, 6, 327678, 131072, 7, 262143, 196608, 6, 327679, 196608, 7, 196608, 131072, 6, 262144, 131072, 7, 196609, 196608, 6, 262145, 196608, 7, 196610, 131072, 6, 262146, 131072, 7, 196611, 196608, 6, 262147, 196608, 7, 196612, 131072, 6, 262148, 131072, 7, 196613, 196608, 6, 262149, 196608, 7, 327684, 131072, 6, 393220, 131072, 7, 327685, 196608, 6, 393221, 196608, 7, 327682, 131072, 6, 393218, 131072, 7, 327683, 196608, 6, 393219, 196608, 7, 327680, 131072, 6, 393216, 131072, 7, 327681, 196608, 6, 393217, 196608, 7, 393214, 131072, 6, 458750, 131072, 7, 393215, 196608, 6, 458751, 196608, 7, 393212, 0, 7, 458748, 0, 6, 393213, 196608, 6, 458749, 196608, 7, 524284, 0, 7, 589820, 0, 6, 524285, 196608, 6, 589821, 196608, 7, 524286, 131072, 6, 589822, 131072, 7, 524287, 196608, 6, 589823, 196608, 7, 458752, 131072, 6, 524288, 131072, 7, 458753, 196608, 6, 524289, 196608, 7, 458754, 131072, 6, 524290, 131072, 7, 458755, 196608, 6, 524291, 196608, 7, 458756, 131072, 6, 524292, 131072, 7, 458757, 196608, 6, 524293, 196608, 7, 589828, 131072, 6, 655364, 131072, 7, 589829, 196608, 6, 655365, 196608, 7, 589826, 131072, 6, 655362, 131072, 7, 589827, 196608, 6, 655363, 196608, 7, 589824, 131072, 6, 655360, 131072, 7, 589825, 196608, 6, 655361, 196608, 7, 655358, 131072, 6, 720894, 131072, 7, 655359, 196608, 6, 720895, 196608, 7, 655356, 0, 7, 720892, 0, 6, 655357, 196608, 6, 720893, 196608, 7, 786428, 0, 7, 851964, 0, 6, 786429, 196608, 6, 851965, 196608, 7, 786430, 131072, 6, 851966, 131072, 7, 786431, 196608, 6, 851967, 196608, 7, 720896, 131072, 6, 786432, 131072, 7, 720897, 196608, 6, 786433, 196608, 7, 720898, 131072, 6, 786434, 131072, 7, 720899, 196608, 6, 786435, 196608, 7, 720900, 131072, 6, 786436, 131072, 7, 720901, 196608, 6, 786437, 196608, 7, -393220, 0, 0, -393219, 131072, 0)
+layer_2/name = "PreBackground"
+layer_2/enabled = true
+layer_2/modulate = Color(1, 1, 1, 1)
+layer_2/y_sort_enabled = false
+layer_2/y_sort_origin = 0
+layer_2/z_index = 5
+layer_2/tile_data = PackedInt32Array()
+layer_3/name = "Background"
+layer_3/enabled = true
+layer_3/modulate = Color(1, 1, 1, 1)
+layer_3/y_sort_enabled = false
+layer_3/y_sort_origin = 0
+layer_3/z_index = 1
+layer_3/tile_data = PackedInt32Array()
+layer_4/name = "Sky"
+layer_4/enabled = true
+layer_4/modulate = Color(0.784314, 0.784314, 0.784314, 1)
+layer_4/y_sort_enabled = false
+layer_4/y_sort_origin = 0
+layer_4/z_index = 0
+layer_4/tile_data = PackedInt32Array()
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(112, 77)
+script = ExtResource("4_siw7w")
+
+[node name="Background_Shader" type="ColorRect" parent="Camera2D"]
+material = SubResource("ShaderMaterial_osj6q")
+offset_left = -198.0
+offset_top = -112.0
+offset_right = 196.0
+offset_bottom = 109.0
+
+[node name="Player" parent="." instance=ExtResource("6_ujgfy")]
+position = Vector2(100, -9)
+SPEED = 100.0
+JUMP_VELOCITY = -300.0
+
+[node name="SpawnPoints" type="Node2D" parent="."]
+
+[node name="SpawnPoint_up" parent="SpawnPoints" instance=ExtResource("7_fkl78")]
+position = Vector2(32, -59)
+
+[node name="SpawnPoint_start" parent="SpawnPoints" instance=ExtResource("7_fkl78")]
+position = Vector2(0, 5)
+isFirst = true
+
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource("8_2w5na")]
+position = Vector2(42, 20)
+
+[node name="Star" parent="." instance=ExtResource("9_wisu2")]
+position = Vector2(63, -17)
+
+[connection signal="onValueChange" from="Player" to="HUD" method="_on_player_on_value_change"]

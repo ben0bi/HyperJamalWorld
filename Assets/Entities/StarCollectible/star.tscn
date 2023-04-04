@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8isw2tr10on"]
+
+[ext_resource type="Script" path="res://Assets/Entities/StarCollectible/Star.gd" id="1_qixv2"]
+[ext_resource type="Texture2D" uid="uid://dwga2uduwy32f" path="res://Assets/Images/goldenstar.svg" id="2_2kved"]
+[ext_resource type="Texture2D" uid="uid://hgh3mqgd4yqt" path="res://Assets/Images/collected_goldenstar.svg" id="3_o225k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_566og"]
+size = Vector2(31, 30)
+
+[node name="Star" type="Area2D"]
+z_index = 9
+script = ExtResource("1_qixv2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5.5, -5)
+shape = SubResource("RectangleShape2D_566og")
+
+[node name="Star" type="Sprite2D" parent="."]
+position = Vector2(5.24999, -5.25)
+scale = Vector2(0.230469, 0.230469)
+texture = ExtResource("2_2kved")
+
+[node name="Collected" type="Sprite2D" parent="."]
+position = Vector2(5.875, -4.875)
+scale = Vector2(0.232422, 0.232422)
+texture = ExtResource("3_o225k")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

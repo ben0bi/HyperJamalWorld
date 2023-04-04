@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cx8465pk5644t"]
+
+[ext_resource type="Script" path="res://Assets/Entities/SpawnPoint/SpawnPoint.gd" id="1_gclu5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oyxhh"]
+size = Vector2(20, 34)
+
+[node name="SpawnPoint" type="Area2D" groups=["SpawnPoint"]]
+script = ExtResource("1_gclu5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_oyxhh")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

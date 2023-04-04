@@ -1,0 +1,199 @@
+[gd_scene load_steps=11 format=3 uid="uid://b2rofrei1f6mo"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/MapController.gd" id="1_833b6"]
+[ext_resource type="TileSet" uid="uid://dqv3cf7oiwj0e" path="res://Assets/Images/Tileset_Map.tres" id="1_uerav"]
+[ext_resource type="Shader" path="res://Assets/Shaders/Background_Water.gdshader" id="2_0oq4n"]
+[ext_resource type="TileSet" uid="uid://dgnm0mpfdpohs" path="res://Assets/Images/Tileset_Map_Trees.tres" id="2_ms7aj"]
+[ext_resource type="PackedScene" uid="uid://cvyw12xj7dlor" path="res://Assets/Entities/Player/Player.tscn" id="3_vtypn"]
+[ext_resource type="PackedScene" path="res://Assets/Entities/MapNavNode/map_nav_node.tscn" id="4_22euu"]
+[ext_resource type="Script" path="res://Assets/Scripts/MapMenuAndPopups.gd" id="6_xuehr"]
+[ext_resource type="PackedScene" uid="uid://c7or6tpagd7op" path="res://Assets/Scenes/HUD.tscn" id="7_eeomo"]
+[ext_resource type="FontFile" uid="uid://4xccs3pmw74l" path="res://Assets/Fonts/GameShark.otf" id="7_rrbvc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7kwxe"]
+shader = ExtResource("2_0oq4n")
+shader_parameter/OCTAVE = 10
+shader_parameter/mulscale = 100.0
+shader_parameter/height = 0.6
+shader_parameter/tide = 0.2
+shader_parameter/foamthickness = 0.05
+shader_parameter/timescale = 1.0
+shader_parameter/waterdeep = 0.3
+shader_parameter/WATER_COL = Quaternion(0.04, 0.38, 0.88, 1)
+shader_parameter/WATER2_COL = Quaternion(0.04, 0.35, 0.78, 1)
+shader_parameter/FOAM_COL = Quaternion(0.8125, 0.9609, 0.9648, 1)
+
+[node name="Root" type="Node2D"]
+script = ExtResource("1_833b6")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_7kwxe")
+offset_left = -386.0
+offset_top = -415.0
+offset_right = 561.0
+offset_bottom = 190.0
+
+[node name="Map64" type="TileMap" parent="."]
+scale = Vector2(0.25, 0.25)
+tile_set = ExtResource("1_uerav")
+format = 2
+layer_0/name = "Background"
+layer_0/tile_data = PackedInt32Array(-458757, 393217, 1, -393221, 393217, 1, -327685, 393217, 1, -262149, 393217, 1, -196613, 393217, 1, -131077, 393217, 1, -65541, 393217, 1, -5, 393217, 1, -6, 393217, 1, 65530, 393217, 1, 65531, 393217, 1, 65532, 393217, 1, 65533, 393217, 1, -4, 393217, 1, -3, 393217, 1, -2, 393217, 1, 65534, 393217, 1, 131070, 393217, 1, 131069, 393217, 1, 131071, 393217, 1, 65536, 393217, 1, 65537, 393217, 1, 131073, 393217, 1, 131074, 393217, 1, 65538, 393217, 1, 65539, 393217, 1, 65540, 393217, 1, 4, 393217, 1, 5, 393217, 1, -65531, 393217, 1, -65530, 393217, 1, -131067, 393217, 1, -131068, 393217, 1, -131069, 393217, 1, -131070, 393217, 1, -131071, 393217, 1, -131072, 393217, 1, -196608, 393217, 1, -262144, 393217, 1, -327680, 393217, 1, -262145, 393217, 1, -262146, 393217, 1, -262147, 393217, 1, -262148, 393217, 1, -196612, 393217, 1, -131076, 393217, 1, -65539, 393217, 1, -65540, 393217, 1, -131075, 393217, 1, -196611, 393217, 1, -196610, 393217, 1, -131074, 393217, 1, -65538, 393217, 1, -65537, 393217, 1, -131073, 393217, 1, -196609, 393217, 1, -1, 393217, 1, 65535, 393217, 1, 0, 393217, 1, -65536, 393217, 1, -65535, 393217, 1, 1, 393217, 1, 2, 393217, 1, -65533, 393217, 1, -65532, 393217, 1, -65534, 393217, 1, -65543, 327681, 0, -65542, 589825, 1, -131078, 327681, 1, -196614, 327681, 1, -262150, 327681, 1, -327686, 327681, 1, -393222, 327681, 1, -458758, 327681, 1, -589830, 327681, 4, -524294, 327681, 5, -524293, 393217, 5, -524292, 393217, 5, -524291, 393217, 5, -524290, 393217, 5, -393220, 524289, 1, -327684, 393217, 1, -458756, 524289, 0, -458755, 393217, 6, -458754, 393217, 6, -458753, 393217, 6, -589829, 393217, 4, -589828, 393217, 4, -589827, 589825, 5, -589826, 393217, 5, -7, 327681, 1, 65529, 327681, 1, 131065, 327681, 3, 131066, 393217, 3, 131067, 393217, 3, 131068, 589825, 0, 196604, 327681, 3, 196605, 393217, 2, 196606, 393217, 2, 196607, 393217, 2, 131072, 589825, 0, 196608, 327681, 3, 196609, 393217, 2, 196610, 393217, 2, 196611, 393217, 2, 196612, 458753, 2, 131076, 524289, 0, 131075, 393217, 1, 131077, 458753, 2, 65541, 524289, 0, 65542, 458753, 2, 6, 524289, 0, 7, 458753, 3, -65529, 458753, 1, -131065, 458753, 1, -196601, 458753, 0, -131066, 393217, 1, -196602, 393217, 0, -196603, 393217, 0, -196604, 393217, 0, -196605, 393217, 0, -196606, 393217, 0, -196607, 524289, 1, -262143, 458753, 1, -327679, 458753, 1, -393215, 458753, 1, -458751, 458753, 0, -458752, 393217, 0, -393217, 393217, 0, -393218, 393217, 0, -393219, 393217, 0, -327683, 393217, 1, -327682, 393217, 1, -327681, 393217, 1, -393216, 393217, 1, 3, 393217, 1, -524289, 393217, 5, -589824, 393217, 5, -524288, 393217, 6, -589825, 393217, 5, -655360, 393217, 5, -589823, 393217, 5, -655359, 393217, 5, -655361, 393217, 5, -720896, 393217, 5, -720895, 393217, 5, -655358, 393217, 5, -589822, 393217, 5, -720894, 393217, 5, -655357, 393217, 5, -589821, 393217, 5, -720893, 393217, 5, -524285, 393217, 5, -589820, 393217, 5, -524284, 393217, 5, -655356, 393217, 5, -458749, 393217, 5, -458748, 393217, 5, -393212, 393217, 5, -393213, 589825, 4, -393214, 327681, 7, -458747, 393217, 5, -393211, 393217, 5, -524283, 393217, 5, -327675, 393217, 7, -327676, 393217, 7, -327677, 327681, 6, -393210, 524289, 4, -327674, 458753, 6, -458746, 393217, 5, -524282, 393217, 5, -458745, 524289, 4, -393209, 458753, 6, -524281, 393217, 5, -589819, 393217, 5, -589818, 393217, 5, -589817, 393217, 5, -524280, 458753, 5, -458744, 458753, 6, -589816, 458753, 5, -655354, 393217, 5, -655353, 393217, 5, -655352, 458753, 5, -720890, 393217, 5, -720889, 393217, 5, -720888, 458753, 5, -655355, 393217, 5, -720891, 393217, 5, -720892, 393217, 5, -786430, 393217, 4, -786429, 393217, 4, -786428, 393217, 4, -786431, 524289, 5, -786432, 393217, 5, -720897, 393217, 5, -786433, 393217, 4, -851968, 393217, 4, -851967, 458753, 4, -655362, 393217, 5, -720898, 589825, 5, -786434, 327681, 4, -655363, 327681, 5, -720899, 327681, 4, -786427, 393217, 4, -786426, 393217, 4, -786425, 393217, 4, -786424, 458753, 4, -458750, 327681, 5, -524286, 589825, 4, -524287, 393217, 6)
+layer_1/name = "Paths"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 1
+layer_1/tile_data = PackedInt32Array(-6, 589825, 11, -5, 393217, 8, -4, 393217, 8, -3, 262145, 10, 65533, 327681, 8, 131069, 524289, 11, -2, 393217, 8, -1, 393217, 8, -65536, 458753, 10, 0, 1, 9, 1, 65537, 8, 65537, 327681, 8, 131073, 524289, 11, -65535, 393217, 8, -65534, 393217, 8, -65533, 393217, 8, -65532, 393217, 8, -65531, 589825, 10, -131072, 327681, 8, -196608, 327681, 8, -262144, 327681, 8, -327680, 65537, 10, -262145, 393217, 8, -262146, 393217, 8, -262147, 393217, 8, -262148, 262145, 10, -196612, 327681, 8, -131076, 524289, 11, -262149, 1, 9, -327685, 327681, 8, -393221, 327681, 8, -458757, 327681, 10, -524293, 1, 8, -524292, 393217, 8, -524291, 393217, 8)
+
+[node name="Trees16" type="TileMap" parent="."]
+scale = Vector2(0.25, 0.25)
+tile_set = ExtResource("2_ms7aj")
+format = 2
+layer_0/name = "Background"
+layer_0/z_index = 2
+layer_0/tile_data = PackedInt32Array(262139, 589825, 7, -393196, 589825, 2, -458730, 589825, 2, -458729, 589825, 3, -458728, 589825, 2, -393192, 589825, 2, -393191, 589825, 2, -327655, 589825, 2, -327654, 589825, 2, -262118, 589825, 3, -262117, 589825, 2, -393190, 589825, 2, -458726, 589825, 2, -524262, 589825, 2, -524263, 589825, 2, -524264, 589825, 2, -524265, 589825, 2, -524266, 589825, 2, -524267, 589825, 2, -589803, 589825, 2, -524268, 589825, 2, -131046, 589825, 3, -196582, 589825, 2, -196581, 589825, 2, -131045, 589825, 2, -65510, 589825, 2, -65511, 589825, 2, -131047, 589825, 2, -393193, 589825, 2, -458734, 589825, 2, -458733, 589825, 2, -524269, 589825, 2, -2031638, 589825, 7, 262128, 524289, 3, 65549, 524289, 3, -720901, 524289, 3, -1441794, 524289, 3, -131098, 589825, 3, -1376270, 524289, 3, -1638413, 524289, 3, -655369, 589825, 7, -458745, 589825, 7, -1441803, 589825, 7, -1376261, 589825, 3, -1638399, 589825, 3, -1441788, 589825, 3, -327703, 589825, 3, -327694, 524289, 3, -983061, 524289, 3, -524274, 524289, 3, 458769, 589825, 3, 327700, 589825, 3, 458765, 589825, 2)
+layer_1/name = "Foreground"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 11
+layer_1/tile_data = PackedInt32Array(-65512, 589825, 2, -65513, 589825, 2, 23, 589825, 3, 22, 589825, 2, 21, 589825, 2, 20, 589825, 2, 19, 589825, 2, 65555, 589825, 2, 65554, 589825, 2, 65556, 589825, 2, 65557, 589825, 2, 65558, 589825, 2, 65559, 589825, 2, 65560, 589825, 2, 65561, 589825, 2, 65562, 589825, 2, 26, 589825, 2, 27, 589825, 2, 25, 589825, 2, -65510, 589825, 2, 655363, 589825, 2, 720899, 589825, 2, 720900, 589825, 2, 786436, 589825, 2, 786437, 589825, 2, 786438, 589825, 2, 786439, 589825, 2, 786440, 589825, 2, 720904, 589825, 3, 720905, 589825, 2, 655369, 589825, 2, 589833, 589825, 2, 786435, 589825, 3, 655362, 589825, 3, 589825, 589825, 2, 524290, 589825, 2, 589834, 589825, 2, 589835, 589825, 3, 655371, 589825, 2, 655372, 589825, 2, 720907, 589825, 2, 720906, 589825, 2, 131049, 589825, 3, -2031629, 589825, 2, -1441814, 589825, 2, -393220, 589825, 2, -2097166, 589825, 2, -2097167, 589825, 2, -2031631, 589825, 3, -2031632, 589825, 2, -2031639, 589825, 2, 131093, 589825, 3, 131096, 589825, 2, 131095, 589825, 2, 131094, 589825, 2)
+
+[node name="Player" parent="." instance=ExtResource("3_vtypn")]
+position = Vector2(-89, -10)
+isOnMap = true
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(1.5, 1.5)
+
+[node name="MapNavNodes" type="Node2D" parent="."]
+z_index = 3
+
+[node name="LVL_1" parent="MapNavNodes" instance=ExtResource("4_22euu")]
+position = Vector2(-88, -8)
+ID = 1
+node_right_ID = 2
+levelPath = "res://Levels/Level_1.tscn"
+
+[node name="LVL_2" parent="MapNavNodes" instance=ExtResource("4_22euu")]
+position = Vector2(-40, -8)
+ID = 2
+stars_needed = 1
+node_left_ID = 1
+node_right_ID = 4
+node_down_ID = 3
+levelPath = "res://Levels/Level_2.tscn"
+
+[node name="LVL_3" parent="MapNavNodes" instance=ExtResource("4_22euu")]
+position = Vector2(-40, 24)
+ID = 3
+stars_needed = 1
+node_up_ID = 2
+
+[node name="LVL_4" parent="MapNavNodes" instance=ExtResource("4_22euu")]
+position = Vector2(8, -8)
+ID = 4
+stars_needed = 3
+node_left_ID = 2
+node_right_ID = 8
+node_up_ID = 9
+node_down_ID = 5
+
+[node name="Path_4_5_a" parent="MapNavNodes" instance=ExtResource("4_22euu")]
+position = Vector2(8, 8)
+ID = 5
+stop = false
+stars_needed = 4
+node_right_ID = 6
+node_up_ID = 4
+
+[node name="Path_4_5_b" parent="MapNavNodes" instance=ExtResource("4_22euu")]
+position = Vector2(24, 8)
+ID = 6
+stop = false
+node_left_ID = 5
+node_down_ID = 7
+
+[node name="LVL_5" parent="MapNavNodes" instance=ExtResource("4_22euu")]
+position = Vector2(24, 40)
+ID = 7
+stars_needed = 4
+node_up_ID = 6
+
+[node name="LVL_6" parent="MapNavNodes" instance=ExtResource("4_22euu")]
+position = Vector2(88, -8)
+ID = 8
+stars_needed = 5
+node_left_ID = 4
+
+[node name="LVL_7" parent="MapNavNodes" instance=ExtResource("4_22euu")]
+position = Vector2(8, -72)
+ID = 9
+stars_needed = 6
+node_left_ID = 10
+node_down_ID = 4
+
+[node name="LVL_8" parent="MapNavNodes" instance=ExtResource("4_22euu")]
+position = Vector2(-56, -72)
+ID = 10
+stars_needed = 7
+node_left_ID = 12
+node_right_ID = 9
+node_down_ID = 11
+
+[node name="LVL_9" parent="MapNavNodes" instance=ExtResource("4_22euu")]
+position = Vector2(-56, -40)
+ID = 11
+stars_needed = 8
+node_up_ID = 10
+
+[node name="Path_8_10" parent="MapNavNodes" instance=ExtResource("4_22euu")]
+position = Vector2(-72, -72)
+ID = 12
+stop = false
+stars_needed = 9
+node_right_ID = 10
+node_up_ID = 13
+
+[node name="LVL_10" parent="MapNavNodes" instance=ExtResource("4_22euu")]
+position = Vector2(-72, -120)
+ID = 13
+stars_needed = 9
+node_down_ID = 12
+
+[node name="HUD" parent="." instance=ExtResource("7_eeomo")]
+
+[node name="Menu" type="CanvasLayer" parent="."]
+scale = Vector2(0.3, 0.3)
+transform = Transform2D(0.3, 0, 0, 0.3, 0, 0)
+script = ExtResource("6_xuehr")
+
+[node name="MoreStarsNeeded" type="Popup" parent="Menu"]
+size = Vector2i(170, 30)
+
+[node name="ColorRect" type="ColorRect" parent="Menu/MoreStarsNeeded"]
+custom_minimum_size = Vector2(126, 26)
+offset_right = 400.0
+offset_bottom = 50.0
+color = Color(0, 0, 0.309804, 0.545098)
+
+[node name="Text" type="Label" parent="Menu/MoreStarsNeeded"]
+custom_minimum_size = Vector2(130, 0)
+offset_right = 170.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(1, 0.580392, 0.14902, 1)
+theme_override_colors/font_shadow_color = Color(0.054902, 0.290196, 1, 1)
+theme_override_fonts/font = ExtResource("7_rrbvc")
+theme_override_font_sizes/font_size = 20
+text = "+0 Stars Needed"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PopupTimer" type="Timer" parent="Menu"]
+wait_time = 2.0
+
+[connection signal="onValueChange" from="Player" to="HUD" method="_on_player_on_value_change"]
+[connection signal="timeout" from="Menu/PopupTimer" to="Menu" method="_on_popup_timer_timeout"]

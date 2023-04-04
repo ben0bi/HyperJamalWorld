@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7or6tpagd7op"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/HUD.gd" id="1_itlwn"]
+[ext_resource type="Texture2D" uid="uid://x05vfxij8h6w" path="res://Assets/Entities/Player/Agi_Frames/Agi_right_1.png" id="2_n1gkl"]
+[ext_resource type="FontFile" uid="uid://4xccs3pmw74l" path="res://Assets/Fonts/GameShark.otf" id="3_fld1s"]
+[ext_resource type="Texture2D" uid="uid://blcnnblclihcj" path="res://Assets/Entities/CoinCollectible/Coin.svg" id="4_4btce"]
+[ext_resource type="Texture2D" uid="uid://dwga2uduwy32f" path="res://Assets/Images/goldenstar.svg" id="5_a272s"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_itlwn")
+
+[node name="Sprite_Lifes" type="Sprite2D" parent="."]
+position = Vector2(65, 11)
+texture = ExtResource("2_n1gkl")
+
+[node name="TXT_Lifes" type="Label" parent="."]
+offset_left = 74.0
+offset_top = 3.0
+offset_right = 108.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(1, 0.419608, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 1)
+theme_override_fonts/font = ExtResource("3_fld1s")
+theme_override_font_sizes/font_size = 20
+text = "99"
+
+[node name="Coin" type="Sprite2D" parent="."]
+position = Vector2(117, 12)
+texture = ExtResource("4_4btce")
+
+[node name="TXT_Coins" type="Label" parent="."]
+offset_left = 128.0
+offset_top = 3.0
+offset_right = 153.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(1, 0.419608, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 1)
+theme_override_fonts/font = ExtResource("3_fld1s")
+theme_override_font_sizes/font_size = 20
+text = "99"
+
+[node name="Star" type="Sprite2D" parent="."]
+position = Vector2(12, 12)
+scale = Vector2(0.160156, 0.160156)
+texture = ExtResource("5_a272s")
+
+[node name="TXT_Stars" type="Label" parent="."]
+offset_left = 23.0
+offset_top = 3.0
+offset_right = 48.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(1, 0.419608, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 1)
+theme_override_fonts/font = ExtResource("3_fld1s")
+theme_override_font_sizes/font_size = 20
+text = "99"
