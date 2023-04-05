@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://fvyavfxjiud4"]
+[gd_scene load_steps=13 format=3 uid="uid://fvyavfxjiud4"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/JumpNRunController.gd" id="1_7vpjv"]
 [ext_resource type="TileSet" uid="uid://dyqmali0y1kpl" path="res://Assets/Images/Tileset_Platform.tres" id="2_cj2o1"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b8isw2tr10on" path="res://Assets/Entities/StarCollectible/star.tscn" id="7_clj52"]
 [ext_resource type="PackedScene" uid="uid://ddhga3ua0qybp" path="res://Assets/Entities/CoinCollectible/Coin.tscn" id="8_0i3qm"]
 [ext_resource type="PackedScene" uid="uid://c7w10c8x3sykd" path="res://Assets/Entities/WeedCollectible/Weed.tscn" id="10_j4qa1"]
+[ext_resource type="PackedScene" uid="uid://banr75eg7k511" path="res://Assets/Entities/CollectibleLifeUp/LifeUp.tscn" id="11_adp61"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_osj6q"]
 shader = ExtResource("4_s6g74")
@@ -27,7 +28,7 @@ tile_set = ExtResource("2_cj2o1")
 format = 2
 layer_0/name = "OverlappingForeground"
 layer_0/z_index = 15
-layer_0/tile_data = PackedInt32Array(131125, 327680, 1, 196661, 327680, 0, 131124, 65536, 6, 196660, 65536, 7, 131126, 327680, 0, 196662, 327680, 0, -1245112, 196608, 6, -1245111, 196608, 6, -1310648, 196608, 0, -1310647, 196608, 0, -1310649, 131072, 0, -1245113, 131072, 6, -1179577, 131072, 6, -1310646, 131072, 6, -1245110, 131072, 6, -1179574, 131072, 6, -1179575, 131072, 6, -1114039, 131072, 7, -1179576, 131072, 6, -1114040, 131072, 7, -1114041, 131072, 7, -1114038, 131072, 7)
+layer_0/tile_data = PackedInt32Array(131125, 327680, 1, 196661, 327680, 1, 131124, 65536, 6, 196660, 65536, 7, 131126, 327680, 0, 196662, 327680, 0, -1245112, 327680, 1, -1245111, 327680, 1, -1310648, 196608, 0, -1310647, 196608, 0, -1310649, 131072, 0, -1245113, 131072, 6, -1179577, 131072, 6, -1310646, 131072, 6, -1245110, 131072, 6, -1179574, 131072, 6, -1179575, 131072, 6, -1114039, 131072, 7, -1179576, 131072, 6, -1114040, 131072, 7, -1114041, 131072, 7, -1114038, 131072, 7)
 layer_1/name = "Foreground"
 layer_1/enabled = true
 layer_1/modulate = Color(1, 1, 1, 1)
@@ -138,5 +139,11 @@ position = Vector2(-55, -201)
 
 [node name="Weed" parent="." instance=ExtResource("10_j4qa1")]
 position = Vector2(1168, -301)
+
+[node name="LifeUp" parent="." instance=ExtResource("11_adp61")]
+position = Vector2(897, 50)
+
+[node name="Coin" parent="." instance=ExtResource("8_0i3qm")]
+position = Vector2(1057, -368)
 
 [connection signal="onValueChange" from="Player" to="HUD" method="_on_player_on_value_change"]
