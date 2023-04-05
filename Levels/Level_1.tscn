@@ -137,13 +137,13 @@ position = Vector2(752, -122)
 [node name="Coin10" parent="Coins" instance=ExtResource("8_0i3qm")]
 position = Vector2(-55, -201)
 
+[node name="Coin16" parent="Coins" instance=ExtResource("8_0i3qm")]
+position = Vector2(1057, -368)
+
 [node name="Weed" parent="." instance=ExtResource("10_j4qa1")]
 position = Vector2(1168, -301)
 
 [node name="LifeUp" parent="." instance=ExtResource("11_adp61")]
 position = Vector2(897, 50)
-
-[node name="Coin" parent="." instance=ExtResource("8_0i3qm")]
-position = Vector2(1057, -368)
 
 [connection signal="onValueChange" from="Player" to="HUD" method="_on_player_on_value_change"]
