@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbrcxd5sbf5yx"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/PlatformerCamera.gd" id="1_bv4v0"]
+[ext_resource type="Shader" path="res://Assets/Shaders/background_clouds.gdshader" id="2_bd1mv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_osj6q"]
+shader = ExtResource("2_bd1mv")
+shader_parameter/BackColor = Vector4(0.25, 0, 0, 0)
+shader_parameter/CloudColor = Quaternion(0.18, 0.7, 0.87, 1)
+shader_parameter/speed = -0.539
+
+[node name="Camera2D" type="Camera2D"]
+position = Vector2(112, 77)
+script = ExtResource("1_bv4v0")
+
+[node name="Background_Shader" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_osj6q")
+offset_left = -198.0
+offset_top = -112.0
+offset_right = 196.0
+offset_bottom = 109.0

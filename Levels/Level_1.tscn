@@ -1,21 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://fvyavfxjiud4"]
+[gd_scene load_steps=9 format=3 uid="uid://fvyavfxjiud4"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/JumpNRunController.gd" id="1_7vpjv"]
 [ext_resource type="TileSet" uid="uid://dyqmali0y1kpl" path="res://Assets/Images/Tileset_Platform.tres" id="2_cj2o1"]
-[ext_resource type="Script" path="res://Assets/Scripts/PlatformerCamera.gd" id="3_ix3v1"]
-[ext_resource type="Shader" path="res://Assets/Shaders/background_clouds.gdshader" id="4_s6g74"]
 [ext_resource type="PackedScene" uid="uid://cvyw12xj7dlor" path="res://Assets/Entities/Player/Player.tscn" id="5_jnrug"]
 [ext_resource type="PackedScene" uid="uid://cx8465pk5644t" path="res://Assets/Entities/SpawnPoint/spawn_point.tscn" id="6_s13fu"]
 [ext_resource type="PackedScene" uid="uid://b8isw2tr10on" path="res://Assets/Entities/StarCollectible/star.tscn" id="7_clj52"]
 [ext_resource type="PackedScene" uid="uid://ddhga3ua0qybp" path="res://Assets/Entities/CoinCollectible/Coin.tscn" id="8_0i3qm"]
 [ext_resource type="PackedScene" uid="uid://c7w10c8x3sykd" path="res://Assets/Entities/WeedCollectible/Weed.tscn" id="10_j4qa1"]
 [ext_resource type="PackedScene" uid="uid://banr75eg7k511" path="res://Assets/Entities/CollectibleLifeUp/LifeUp.tscn" id="11_adp61"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_osj6q"]
-shader = ExtResource("4_s6g74")
-shader_parameter/BackColor = Vector4(0.25, 0, 0, 0)
-shader_parameter/CloudColor = Quaternion(0.18, 0.7, 0.87, 1)
-shader_parameter/speed = -0.539
 
 [node name="Root" type="Node2D"]
 script = ExtResource("1_7vpjv")
@@ -54,17 +46,6 @@ layer_4/y_sort_enabled = false
 layer_4/y_sort_origin = 0
 layer_4/z_index = 0
 layer_4/tile_data = PackedInt32Array()
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(112, 77)
-script = ExtResource("3_ix3v1")
-
-[node name="Background_Shader" type="ColorRect" parent="Camera2D"]
-material = SubResource("ShaderMaterial_osj6q")
-offset_left = -198.0
-offset_top = -112.0
-offset_right = 196.0
-offset_bottom = 109.0
 
 [node name="Player" parent="." instance=ExtResource("5_jnrug")]
 position = Vector2(48, 6)

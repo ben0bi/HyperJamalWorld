@@ -14,6 +14,11 @@ func _ready():
 	# initialize HUD by sending signal
 	player.onValueChange.emit()
 	
+	# create camera and background
+	var camerafile = load("res://Assets/Scenes/camera.tscn")
+	var cam = camerafile.instantiate()
+	root.add_child(cam)
+	root.move_child(cam,0)
 	# prepare player
 	player.setAnimation("right_idle")
 	
