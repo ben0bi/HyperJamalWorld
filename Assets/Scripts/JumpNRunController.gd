@@ -18,7 +18,10 @@ func _ready():
 	var camerafile = load("res://Assets/Scenes/camera.tscn")
 	var cam = camerafile.instantiate()
 	root.add_child(cam)
+	# move the camera to index 0 in the tree so
+	# that the background is really in the background.
 	root.move_child(cam,0)
+
 	# prepare player
 	player.setAnimation("right_idle")
 	
