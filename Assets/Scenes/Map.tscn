@@ -92,6 +92,7 @@ position = Vector2(-40, 24)
 ID = 3
 stars_needed = 1
 node_up_ID = 2
+levelPath = "res://Levels/Level_3.tscn"
 
 [node name="LVL_4" parent="MapNavNodes" instance=ExtResource("4_22euu")]
 position = Vector2(8, -8)
