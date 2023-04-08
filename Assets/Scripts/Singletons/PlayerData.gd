@@ -6,7 +6,7 @@ var actual_lifes = 5
 var is_active = true
 
 # player has one more "life" if big.
-var is_big = true
+var is_big = false
 
 # the id of the actual map node.
 # actual map node will be set with id.
