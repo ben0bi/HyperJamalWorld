@@ -65,7 +65,34 @@ isFirst = true
 [node name="Coins" type="Node2D" parent="."]
 
 [node name="Coin" parent="Coins" instance=ExtResource("8_2w5na")]
-position = Vector2(42, 20)
+position = Vector2(226, -291)
+
+[node name="Coin3" parent="Coins" instance=ExtResource("8_2w5na")]
+position = Vector2(184, -50)
+
+[node name="Coin2" parent="Coins" instance=ExtResource("8_2w5na")]
+position = Vector2(415, -293)
+
+[node name="Coin4" parent="Coins" instance=ExtResource("8_2w5na")]
+position = Vector2(-184, -217)
+
+[node name="Coin5" parent="Coins" instance=ExtResource("8_2w5na")]
+position = Vector2(-292, -218)
+
+[node name="Coin6" parent="Coins" instance=ExtResource("8_2w5na")]
+position = Vector2(250, -50)
+
+[node name="Coin7" parent="Coins" instance=ExtResource("8_2w5na")]
+position = Vector2(311, -51)
+
+[node name="Coin8" parent="Coins" instance=ExtResource("8_2w5na")]
+position = Vector2(378, -50)
+
+[node name="Coin9" parent="Coins" instance=ExtResource("8_2w5na")]
+position = Vector2(442, -49)
+
+[node name="Coin10" parent="Coins" instance=ExtResource("8_2w5na")]
+position = Vector2(343, -292)
 
 [node name="Star" parent="." instance=ExtResource("9_wisu2")]
 position = Vector2(-527, -189)
