@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://byf1a4mccqh40"]
+
+[ext_resource type="Script" path="res://Assets/Entities/MovingObjects/FireballLine/FireballRotator.gd" id="1_emxw7"]
+[ext_resource type="Texture2D" uid="uid://e0f0bijicro5" path="res://Assets/Images/FireBall.svg" id="1_rlu7r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5kf26"]
+size = Vector2(10, 105.25)
+
+[node name="FireballRotator" type="Area2D"]
+z_index = 10
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_emxw7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5kf26")
+
+[node name="Ballsprites" type="Node2D" parent="."]
+
+[node name="FireBall" type="Sprite2D" parent="Ballsprites"]
+position = Vector2(0, 8)
+texture = ExtResource("1_rlu7r")
+
+[node name="FireBall2" type="Sprite2D" parent="Ballsprites"]
+position = Vector2(0, 18)
+texture = ExtResource("1_rlu7r")
+
+[node name="FireBall3" type="Sprite2D" parent="Ballsprites"]
+position = Vector2(0, 28)
+texture = ExtResource("1_rlu7r")
+
+[node name="FireBall4" type="Sprite2D" parent="Ballsprites"]
+position = Vector2(0, 38)
+texture = ExtResource("1_rlu7r")
+
+[node name="FireBall5" type="Sprite2D" parent="Ballsprites"]
+position = Vector2(0, 48)
+texture = ExtResource("1_rlu7r")
+
+[node name="FireBall6" type="Sprite2D" parent="Ballsprites"]
+position = Vector2(0, -48)
+texture = ExtResource("1_rlu7r")
+
+[node name="FireBall7" type="Sprite2D" parent="Ballsprites"]
+position = Vector2(0, -38)
+texture = ExtResource("1_rlu7r")
+
+[node name="FireBall8" type="Sprite2D" parent="Ballsprites"]
+position = Vector2(0, -28)
+texture = ExtResource("1_rlu7r")
+
+[node name="FireBall9" type="Sprite2D" parent="Ballsprites"]
+position = Vector2(0, -18)
+texture = ExtResource("1_rlu7r")
+
+[node name="FireBall10" type="Sprite2D" parent="Ballsprites"]
+position = Vector2(0, -8)
+texture = ExtResource("1_rlu7r")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://eqf0arn3abc3"]
+[gd_scene load_steps=7 format=3 uid="uid://eqf0arn3abc3"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/JumpNRunController.gd" id="1_g7ftq"]
 [ext_resource type="TileSet" uid="uid://dyqmali0y1kpl" path="res://Assets/Images/Tileset_Platform.tres" id="2_3mq8y"]
 [ext_resource type="PackedScene" uid="uid://cvyw12xj7dlor" path="res://Assets/Entities/Player/Player.tscn" id="5_dnsk3"]
+[ext_resource type="PackedScene" uid="uid://byf1a4mccqh40" path="res://Assets/Entities/MovingObjects/FireballLine/FireballRotator.tscn" id="6_6irmh"]
 [ext_resource type="PackedScene" uid="uid://cx8465pk5644t" path="res://Assets/Entities/SpawnPoint/spawn_point.tscn" id="6_8rsrb"]
 [ext_resource type="PackedScene" uid="uid://ddhga3ua0qybp" path="res://Assets/Entities/CoinCollectible/Coin.tscn" id="7_5ocoi"]
 
@@ -62,3 +63,6 @@ isFirst = true
 
 [node name="Coin" parent="Coins" instance=ExtResource("7_5ocoi")]
 position = Vector2(42, 20)
+
+[node name="FireballRotator" parent="." instance=ExtResource("6_6irmh")]
+position = Vector2(140, -56)
