@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cvyw12xj7dlor"]
+[gd_scene load_steps=36 format=3 uid="uid://cvyw12xj7dlor"]
 
 [ext_resource type="Texture2D" uid="uid://cu0nqnreru83f" path="res://Assets/Entities/Player/Agi_Frames/Agi_down_idle_1.png" id="1_2n8hk"]
 [ext_resource type="Script" path="res://Assets/Entities/Player/Player.gd" id="1_op4o0"]
@@ -18,6 +18,7 @@
 [ext_resource type="AudioStream" uid="uid://dptnfhflrr04r" path="res://Assets/Entities/Player/Sounds/shrink.wav" id="16_3sviq"]
 [ext_resource type="AudioStream" uid="uid://bpynm38wme78q" path="res://Assets/Entities/Player/Sounds/extralife.wav" id="17_ddhd4"]
 [ext_resource type="AudioStream" uid="uid://dtv7xfoukixuj" path="res://Assets/Entities/Player/Sounds/coin.wav" id="18_1x3jl"]
+[ext_resource type="AudioStream" uid="uid://bq4dnh73hmnea" path="res://Assets/Entities/Player/Sounds/lifelost.ogg" id="19_ysdhq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j8krs"]
 animations = [{
@@ -488,6 +489,9 @@ stream = ExtResource("17_ddhd4")
 
 [node name="Coin" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource("18_1x3jl")
+
+[node name="LifeLost" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("19_ysdhq")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="SpikeDetection2D" to="SpikeDetection2D" method="_on_body_entered"]

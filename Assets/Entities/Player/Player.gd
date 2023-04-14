@@ -92,6 +92,7 @@ func hit():
 			shrink()
 		else:
 			print("You are dead.")
+			$Sounds/LifeLost.play()
 			PlayerData.actual_lifes-=1
 			PlayerData.is_active = false # reset on restart
 			lock_animations=true
