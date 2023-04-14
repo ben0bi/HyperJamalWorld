@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0q4ns1tsbvrk"]
+
+[ext_resource type="Texture2D" uid="uid://dvhuxssko0kkr" path="res://Assets/Images/FireballCenterCircle.svg" id="1_om8e5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1cmdj"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["Enemy"]]
+z_index = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1cmdj")
+
+[node name="FireballCenterCircle" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_om8e5")

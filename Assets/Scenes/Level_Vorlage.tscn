@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://eqf0arn3abc3"]
+[gd_scene load_steps=9 format=3 uid="uid://eqf0arn3abc3"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/JumpNRunController.gd" id="1_g7ftq"]
 [ext_resource type="TileSet" uid="uid://dyqmali0y1kpl" path="res://Assets/Images/Tileset_Platform.tres" id="2_3mq8y"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://byf1a4mccqh40" path="res://Assets/Entities/MovingObjects/FireballLine/FireballLine.tscn" id="6_bsihd"]
 [ext_resource type="PackedScene" uid="uid://cafi3pm6tuepo" path="res://Assets/Entities/MovingObjects/FireballLine/HalfFireballLine.tscn" id="7_3k7k7"]
 [ext_resource type="PackedScene" uid="uid://ddhga3ua0qybp" path="res://Assets/Entities/CoinCollectible/Coin.tscn" id="7_5ocoi"]
+[ext_resource type="PackedScene" uid="uid://d0q4ns1tsbvrk" path="res://Assets/Entities/Enemies/Gumba/Gumba.tscn" id="8_fqblk"]
 
 [node name="Root" type="Node2D"]
 script = ExtResource("1_g7ftq")
@@ -66,7 +67,10 @@ isFirst = true
 position = Vector2(42, 20)
 
 [node name="FireballRotator" parent="." instance=ExtResource("6_bsihd")]
-position = Vector2(137, -40)
+position = Vector2(138, -94)
 
 [node name="HalfFireballLine" parent="." instance=ExtResource("7_3k7k7")]
-position = Vector2(85, -13)
+position = Vector2(5, -45)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("8_fqblk")]
+position = Vector2(97, 21)
