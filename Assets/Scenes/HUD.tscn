@@ -54,3 +54,22 @@ theme_override_colors/font_shadow_color = Color(0, 0, 1, 1)
 theme_override_fonts/font = ExtResource("3_fld1s")
 theme_override_font_sizes/font_size = 20
 text = "99"
+
+[node name="Popup_GameOver" type="Popup" parent="."]
+size = Vector2i(240, 100)
+
+[node name="ColorRect" type="ColorRect" parent="Popup_GameOver"]
+offset_right = 500.0
+offset_bottom = 500.0
+color = Color(0, 0, 0.439216, 0.470588)
+
+[node name="TXT_GAMEOVER" type="Label" parent="Popup_GameOver"]
+offset_right = 240.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(1, 0.419608, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 1)
+theme_override_fonts/font = ExtResource("3_fld1s")
+theme_override_font_sizes/font_size = 40
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
