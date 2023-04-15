@@ -11,7 +11,7 @@ var is_on_spike = false
 var is_on_ladder = false
 var is_jumping = false
 var is_dead = false
-var has_hit_enemy = false
+#var has_hit_enemy = false
 var already_laddered = false # did the player already press up or down?
 var lock_animations = false
 var lock_steering = false
@@ -115,23 +115,28 @@ func gameOver():
 	print("+++ GAME OVER +++")
 
 # check for enemy collision
-func enemyCollision():
-	# get all collisions
-	if not has_hit_enemy:
-		for index in range(get_slide_collision_count()):
-			var collision = get_slide_collision(index)
-			# check if there is a collider
-			if collision.get_collider()==null:
-				continue
-		
-			# check if collision is an enemy
-			if collision.get_collider().is_in_group("Enemy"):
-				var enemy = collision.get_collider()
-				if Vector2.UP.dot(collision.get_normal())>0.1:
-					enemy.queue_free()
-				else:
-					has_hit_enemy=true
-					hit()
+# because of the moving function from the
+# enemies, player will not get hit here
+# when standing around. so we do it in
+# the enemy script.
+
+#func enemyCollision():
+#	# get all collisions
+#	if not has_hit_enemy:
+#		for index in range(get_slide_collision_count()):
+#			var collision = get_slide_collision(index)
+#			# check if there is a collider
+#			if collision.get_collider()==null:
+#				continue
+#		
+#			# check if collision is an enemy
+#			if collision.get_collider().is_in_group("Enemy"):
+#				var enemy = collision.get_collider()
+#				if Vector2.UP.dot(collision.get_normal())>0.1:
+#					enemy.queue_free()
+#				else:
+#					has_hit_enemy=true
+#					hit()
 
 # Jump And Run Controller
 func JumpRunControl(delta):
@@ -180,7 +185,7 @@ func JumpRunControl(delta):
 			velocity.x=move_toward(velocity.x,0,SPEED)
 		
 		move_and_slide()
-		enemyCollision()
+		#enemyCollision()
 		
 	# hit if on deadly area
 	if is_on_spike==true:
@@ -241,7 +246,6 @@ func _on_inactive_timer_timeout():
 	PlayerData.is_active = true
 	lock_animations=false
 	lock_steering=false
-	has_hit_enemy = false
 	setAnimation("right_idle")
 	pass # Replace with function body.
 
