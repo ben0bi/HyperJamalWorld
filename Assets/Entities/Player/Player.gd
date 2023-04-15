@@ -179,7 +179,7 @@ func JumpRunControl(delta):
 		# get new direction
 		direction = Input.get_axis("ui_left", "ui_right")
 		# apply direction
-		if direction:
+		if direction and (not is_on_ladder or onfloor or is_jumping):
 			velocity.x = direction*SPEED
 		else:
 			velocity.x=move_toward(velocity.x,0,SPEED)
