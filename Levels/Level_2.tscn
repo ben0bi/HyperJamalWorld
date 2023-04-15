@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://ditaftt42mtpe"]
+[gd_scene load_steps=9 format=3 uid="uid://ditaftt42mtpe"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/JumpNRunController.gd" id="1_7j1hd"]
 [ext_resource type="TileSet" uid="uid://dyqmali0y1kpl" path="res://Assets/Images/Tileset_Platform.tres" id="3_nl8jq"]
 [ext_resource type="PackedScene" uid="uid://cvyw12xj7dlor" path="res://Assets/Entities/Player/Player.tscn" id="6_ujgfy"]
 [ext_resource type="PackedScene" uid="uid://cx8465pk5644t" path="res://Assets/Entities/SpawnPoint/spawn_point.tscn" id="7_fkl78"]
 [ext_resource type="PackedScene" uid="uid://ddhga3ua0qybp" path="res://Assets/Entities/CoinCollectible/Coin.tscn" id="8_2w5na"]
+[ext_resource type="PackedScene" uid="uid://d0q4ns1tsbvrk" path="res://Assets/Entities/Enemies/Gumba/Gumba.tscn" id="8_p8cpj"]
 [ext_resource type="PackedScene" uid="uid://b8isw2tr10on" path="res://Assets/Entities/StarCollectible/star.tscn" id="9_wisu2"]
 [ext_resource type="PackedScene" uid="uid://c7w10c8x3sykd" path="res://Assets/Entities/WeedCollectible/Weed.tscn" id="10_abt1n"]
 
@@ -99,3 +100,6 @@ position = Vector2(-527, -189)
 
 [node name="Weed" parent="." instance=ExtResource("10_abt1n")]
 position = Vector2(469, -152)
+
+[node name="Gumba" parent="." instance=ExtResource("8_p8cpj")]
+position = Vector2(268, 70)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://fvyavfxjiud4"]
+[gd_scene load_steps=10 format=3 uid="uid://fvyavfxjiud4"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/JumpNRunController.gd" id="1_7vpjv"]
 [ext_resource type="TileSet" uid="uid://dyqmali0y1kpl" path="res://Assets/Images/Tileset_Platform.tres" id="2_cj2o1"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cx8465pk5644t" path="res://Assets/Entities/SpawnPoint/spawn_point.tscn" id="6_s13fu"]
 [ext_resource type="PackedScene" uid="uid://b8isw2tr10on" path="res://Assets/Entities/StarCollectible/star.tscn" id="7_clj52"]
 [ext_resource type="PackedScene" uid="uid://ddhga3ua0qybp" path="res://Assets/Entities/CoinCollectible/Coin.tscn" id="8_0i3qm"]
+[ext_resource type="PackedScene" uid="uid://d0q4ns1tsbvrk" path="res://Assets/Entities/Enemies/Gumba/Gumba.tscn" id="9_3bmug"]
 [ext_resource type="PackedScene" uid="uid://c7w10c8x3sykd" path="res://Assets/Entities/WeedCollectible/Weed.tscn" id="10_j4qa1"]
 [ext_resource type="PackedScene" uid="uid://banr75eg7k511" path="res://Assets/Entities/CollectibleLifeUp/LifeUp.tscn" id="11_adp61"]
 
@@ -123,3 +124,6 @@ position = Vector2(1168, -301)
 
 [node name="LifeUp" parent="." instance=ExtResource("11_adp61")]
 position = Vector2(897, 50)
+
+[node name="Gumba" parent="." instance=ExtResource("9_3bmug")]
+position = Vector2(125, 56)
