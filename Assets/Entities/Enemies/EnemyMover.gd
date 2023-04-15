@@ -3,7 +3,7 @@ extends CharacterBody2D
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var direction = 1
-@export var Speed = 100
+@export var Speed = 50
 
 var hit_player=false
 
@@ -26,7 +26,7 @@ func _physics_process(delta):
 		if collision.get_collider().is_in_group("Player"):
 			var player= collision.get_collider()
 			playerfound = true
-			if Vector2.DOWN.dot(collision.get_normal())>0.1:
+			if Vector2.DOWN.dot(collision.get_normal())>0.05:
 				print("PLAYER HITS ENEMY")
 				queue_free()
 			else:

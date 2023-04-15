@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="16"
+   height="16"
+   viewBox="0 0 4.2333332 4.2333333"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   sodipodi:docname="Gumba_IDLE.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="32.413584"
+     inkscape:cx="9.4404863"
+     inkscape:cy="10.042086"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="1911"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#803300;stroke:#ffffff;stroke-width:0"
+       id="rect462"
+       width="0.64485544"
+       height="1.1260341"
+       x="0.91422606"
+       y="3.1022601" />
+    <rect
+       style="fill:#803300;stroke:#ffffff;stroke-width:0"
+       id="rect516"
+       width="0.64485544"
+       height="1.1260341"
+       x="2.5017257"
+       y="3.1022601" />
+    <path
+       style="fill:#ff6600;stroke:#ffffff;stroke-width:0"
+       id="path298"
+       sodipodi:type="arc"
+       sodipodi:cx="2.1141481"
+       sodipodi:cy="1.8689883"
+       sodipodi:rx="2.0896564"
+       sodipodi:ry="1.7873527"
+       sodipodi:start="0"
+       sodipodi:end="6.2254615"
+       sodipodi:open="true"
+       sodipodi:arc-type="arc"
+       d="M 4.2038045,1.8689883 A 2.0896564,1.7873527 0 0 1 2.1443028,3.6561548 2.0896564,1.7873527 0 0 1 0.02536208,1.9205675 2.0896564,1.7873527 0 0 1 2.0237092,0.08331032 2.0896564,1.7873527 0 0 1 4.2003241,1.7658728" />
+    <rect
+       style="fill:#000000;stroke:#ffffff;stroke-width:0"
+       id="rect570"
+       width="0.29385826"
+       height="1.3876641"
+       x="1.420315"
+       y="0.87341207" />
+    <rect
+       style="fill:#000000;stroke:#ffffff;stroke-width:0"
+       id="rect624"
+       width="0.29385826"
+       height="1.3876641"
+       x="2.4786484"
+       y="0.87341207" />
+  </g>
+</svg>

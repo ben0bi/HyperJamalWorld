@@ -1,18 +1,18 @@
 [gd_scene load_steps=4 format=3 uid="uid://d0q4ns1tsbvrk"]
 
 [ext_resource type="Script" path="res://Assets/Entities/Enemies/EnemyMover.gd" id="1_al05s"]
-[ext_resource type="Texture2D" uid="uid://dvhuxssko0kkr" path="res://Assets/Images/FireballCenterCircle.svg" id="1_om8e5"]
+[ext_resource type="Texture2D" uid="uid://bhlih1bhkjb2y" path="res://Assets/Entities/Enemies/Gumba/Gumba_IDLE.svg" id="2_ry6lp"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1cmdj"]
-size = Vector2(16, 16)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_afdnn"]
+radius = 7.0
+height = 16.0
 
 [node name="Gumba" type="CharacterBody2D" groups=["Enemy"]]
 z_index = 10
 script = ExtResource("1_al05s")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_1cmdj")
-
 [node name="FireballCenterCircle" type="Sprite2D" parent="."]
-scale = Vector2(2, 2)
-texture = ExtResource("1_om8e5")
+texture = ExtResource("2_ry6lp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_afdnn")
