@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bodf33rv0ke7k"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Blocker.gd" id="1_mxsxl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7b0h0"]
+size = Vector2(10, 20)
+
+[node name="Blocker" type="Area2D" groups=["Blocker"]]
+script = ExtResource("1_mxsxl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7b0h0")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

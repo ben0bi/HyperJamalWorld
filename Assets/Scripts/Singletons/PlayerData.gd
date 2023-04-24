@@ -10,11 +10,11 @@ var is_big = false
 
 # the id of the actual map node.
 # actual map node will be set with id.
-var map_pos_id = 1
+var map_pos_id = 4
 var actual_map_node=null
 
 # stars the player has collected till now.
-var actual_stars=1
+var actual_stars=4
 # dictionary which determines if a star in a level is already collected.
 # stars reference to their map position id.
 # there is only one star in the level.

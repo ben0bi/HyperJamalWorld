@@ -7,6 +7,9 @@ var direction = -1
 
 var hit_player=false
 
+func changeDirection():
+	direction=-direction
+
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
@@ -14,7 +17,7 @@ func _physics_process(delta):
 
 	# reverse direction if a wall was hit
 	if is_on_wall():
-		direction= -direction#	print("ENEMY ON WALL")
+		changeDirection() #	print("ENEMY ON WALL")
 	
 	# check if player gets a hit or 
 	# player hits this from above.
