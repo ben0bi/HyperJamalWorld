@@ -49,7 +49,6 @@ layer_4/tile_data = PackedInt32Array()
 [node name="Player" parent="." instance=ExtResource("3_rm2x7")]
 position = Vector2(100, -9)
 SPEED = 100.0
-JUMP_VELOCITY = -300.0
 
 [node name="SpawnPoints" type="Node2D" parent="."]
 

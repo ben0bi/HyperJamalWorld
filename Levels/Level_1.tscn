@@ -52,7 +52,6 @@ layer_4/tile_data = PackedInt32Array()
 position = Vector2(48, 6)
 collision_layer = 33
 SPEED = 100.0
-JUMP_VELOCITY = -300.0
 
 [node name="SpawnPoints" type="Node2D" parent="."]
 

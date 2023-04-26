@@ -30,14 +30,14 @@ func _physics_process(delta):
 			var player= collision.get_collider()
 			playerfound = true
 			if Vector2.DOWN.dot(collision.get_normal())>0.05:
-				print("PLAYER HITS ENEMY")
+				print("PLAYER HITS MOB")
 				queue_free()
 			else:
 				# it may hit the player more than once
 				if not hit_player:
 					player.hit()
 					hit_player=true
-					print("ENEMY HITS PLAYER")
+					print("MOB HITS PLAYER")
 	
 	# reset player hit detected
 	if not playerfound:
