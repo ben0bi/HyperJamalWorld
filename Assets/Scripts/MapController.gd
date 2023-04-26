@@ -27,8 +27,6 @@ func getmapnodebyid(id):
 	for m in mapnodes:
 		if m.ID==id:
 			return m
-			break
-	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 # we get the map input here and move the player sprite
